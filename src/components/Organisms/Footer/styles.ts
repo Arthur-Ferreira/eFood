@@ -17,12 +17,12 @@ const SocialMedia = styled.ul`
 const Small = styled.small`
   color: #E66767;
   text-align: center;
-  font-size: 0.6rem;
+  font-size: 0.625rem;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   width: 100%;
-  max-width: 25rem;
+  max-width: 30rem;
 `
 
 
