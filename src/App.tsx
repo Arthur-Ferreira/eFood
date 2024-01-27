@@ -1,13 +1,29 @@
-import "./App.css"
+import React from "react"
+import {
+  Route,
+  RouterProvider,
+  createBrowserRouter,
+  createRoutesFromElements,
+} from "react-router-dom"
+import Home from "./components/Templates/Home"
+import RestaurantDetails from "./components/Templates/RestaurantDetails"
+// import Navbar from "./components/Molecules/Navbar"
+// import Footer from "./components/Molecules/Footer"
+{
+  /* <Navbar />
+<Footer /> */
+}
 
-const App = () => {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <h1>eFood</h1>
-      </header>
-    </div>
-  )
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<Home />}>
+      <Route path="/restaurant/:id" element={<RestaurantDetails />} />
+    </Route>,
+  ),
+)
+
+const App: React.FC = () => {
+  return <RouterProvider router={router} />
 }
 
 export default App
