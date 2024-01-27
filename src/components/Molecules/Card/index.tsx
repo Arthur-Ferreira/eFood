@@ -8,9 +8,10 @@ import {
   CardRating,
   CardDescription,
   CardButton,
-  CardBadge,
   CardHeader,
 } from "./styles"
+
+import CardBadge from "../../Atoms/Badge"
 
 import start from "../../../public/start.svg"
 
@@ -19,6 +20,7 @@ interface RestaurantCardProps {
   rating: number
   description: string
   image: string
+  children: JSX.Element
 }
 
 const Card: React.FC<RestaurantCardProps> = ({
@@ -26,11 +28,12 @@ const Card: React.FC<RestaurantCardProps> = ({
   rating,
   description,
   image,
+  children
 }) => {
   return (
     <CardContainer>
       <CardImage src={image} alt={name} />
-      <CardBadge>Japonesa</CardBadge>
+      {children}
       <CardInfo>
         <CardHeader>
           <CardTitle>{name}</CardTitle>

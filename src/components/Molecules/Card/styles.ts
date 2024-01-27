@@ -69,21 +69,6 @@ const CardButton = styled(Link)`
   text-decoration: none;
 `
 
-const CardBadge = styled.span`
-  background-color: #E66767;
-  color: #FFEBD9;
-  text-align: center;
-  font-size: 0.75rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  padding: 0.25rem 0.3rem;
-  z-index: 1;
-  position: absolute;
-  top: 1.3rem;
-  right: 1.25rem;
-`
-
 const CardHeader = styled.header`
   display: flex;
   align-items: center;
@@ -99,6 +84,5 @@ export {
   CardRating,
   CardDescription,
   CardButton,
-  CardBadge,
   CardHeader,
 }
