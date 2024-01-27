@@ -21,6 +21,8 @@ const Small = styled.small`
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  width: 100%;
+  max-width: 25rem;
 `
 
 

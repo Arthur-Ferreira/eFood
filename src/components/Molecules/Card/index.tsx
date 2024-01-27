@@ -1,13 +1,18 @@
 import type React from "react"
 
 import {
-  RestaurantCardContainer,
-  RestaurantCardImage,
-  RestaurantCardInfo,
-  RestaurantCardTitle,
-  RestaurantCardRating,
-  RestaurantCardDescription,
+  CardContainer,
+  CardImage,
+  CardInfo,
+  CardTitle,
+  CardRating,
+  CardDescription,
+  CardButton,
+  CardBadge,
+  CardHeader,
 } from "./styles"
+
+import start from "../../../public/start.svg"
 
 interface RestaurantCardProps {
   name: string
@@ -23,16 +28,21 @@ const Card: React.FC<RestaurantCardProps> = ({
   image,
 }) => {
   return (
-    <RestaurantCardContainer>
-      <RestaurantCardImage src={image} alt={name} />
-      <RestaurantCardInfo>
-        <RestaurantCardTitle>{name}</RestaurantCardTitle>
-        <RestaurantCardRating>
-          {rating} stars ({Math.floor(rating)} ratings)
-        </RestaurantCardRating>
-        <RestaurantCardDescription>{description}</RestaurantCardDescription>
-      </RestaurantCardInfo>
-    </RestaurantCardContainer>
+    <CardContainer>
+      <CardImage src={image} alt={name} />
+      <CardBadge>Japonesa</CardBadge>
+      <CardInfo>
+        <CardHeader>
+          <CardTitle>{name}</CardTitle>
+          <CardRating>
+            {rating}
+            <img src={start} alt="Rating star" />
+          </CardRating>
+        </CardHeader>
+        <CardDescription>{description}</CardDescription>
+        <CardButton>Saiba mais</CardButton>
+      </CardInfo>
+    </CardContainer>
   )
 }
 

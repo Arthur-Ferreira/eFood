@@ -1,36 +1,27 @@
 import styled from "styled-components"
 
-const RestaurantCardContainer = styled.div`
+const CardContainer = styled.div`
   width: 100%;
   max-width: 29.5rem;
   overflow: hidden;
-  margin-bottom: 2rem;
+  position: relative;
 `
-  
-const RestaurantCardImage = styled.img`
+
+const CardImage = styled.img`
   width: 100%;
   height: 60%;
   object-fit: cover;
+  margin-bottom: -0.3rem;
 `
-  
-const RestaurantCardInfo = styled.div`
+
+const CardInfo = styled.div`
   background: #FFF;
   border: 1px solid #E66767;
   border-top: none;
   padding: 0.6rem;
-  padding-top: 0;
-`
-  
-const RestaurantCardTitle = styled.h3`
-  color: #E66767;
-  font-size: 1.1rem;
-  font-style: normal;
-  font-weight: 700;
-  margin: 0;
-  // line-height: normal;
 `
 
-const RestaurantCardRating = styled.p`
+const CardTitle = styled.h3`
   color: #E66767;
   font-size: 1.1rem;
   font-style: normal;
@@ -38,19 +29,69 @@ const RestaurantCardRating = styled.p`
   line-height: normal;
 `
 
-const RestaurantCardDescription = styled.p`
+const CardRating = styled.p`
+  color: #E66767;
+  font-size: 1.1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+`
+
+const CardDescription = styled.p`
   color: #E66767;
   font-size: 0.8rem;
   font-style: normal;
   font-weight: 400;
   line-height: 22px;
+  margin: 1rem 0;
 `
 
+const CardButton = styled.button`
+  background-color: #E66767;
+  border: none;
+  color: #FFEBD9;
+  cursor: pointer;
+  text-align: center;
+  font-size: 0.8rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  padding: 0.25rem 0.3rem;
+`
+
+const CardBadge = styled.span`
+  background-color: #E66767;
+  color: #FFEBD9;
+  text-align: center;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  padding: 0.25rem 0.3rem;
+  z-index: 1;
+  position: absolute;
+  top: 1.3rem;
+  right: 1.25rem;
+`
+
+const CardHeader = styled.header`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`
+
+
 export {
-  RestaurantCardContainer,
-  RestaurantCardImage,
-  RestaurantCardInfo,
-  RestaurantCardTitle,
-  RestaurantCardRating,
-  RestaurantCardDescription
+  CardContainer,
+  CardImage,
+  CardInfo,
+  CardTitle,
+  CardRating,
+  CardDescription,
+  CardButton,
+  CardBadge,
+  CardHeader,
 }
