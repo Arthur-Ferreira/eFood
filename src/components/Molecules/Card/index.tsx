@@ -40,7 +40,7 @@ const Card: React.FC<RestaurantCardProps> = ({
           </CardRating>
         </CardHeader>
         <CardDescription>{description}</CardDescription>
-        <CardButton>Saiba mais</CardButton>
+        <CardButton to={"restaurant"}>Saiba mais</CardButton>
       </CardInfo>
     </CardContainer>
   )

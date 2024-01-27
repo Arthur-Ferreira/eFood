@@ -1,5 +1,7 @@
 import styled from "styled-components"
 
+import { Link } from "react-router-dom"
+
 const CardContainer = styled.div`
   width: 100%;
   max-width: 29.5rem;
@@ -49,17 +51,17 @@ const CardDescription = styled.p`
   margin: 1rem 0;
 `
 
-const CardButton = styled.button`
+const CardButton = styled(Link)`
   background-color: #E66767;
   border: none;
   color: #FFEBD9;
-  cursor: pointer;
   text-align: center;
   font-size: 0.8rem;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
   padding: 0.25rem 0.3rem;
+  text-decoration: none;
 `
 
 const CardBadge = styled.span`
