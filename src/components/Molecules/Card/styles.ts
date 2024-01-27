@@ -5,14 +5,16 @@ import { Link } from "react-router-dom"
 const CardContainer = styled.div`
   width: 100%;
   max-width: 29.5rem;
+  height: 100%;
+  max-height: 25rem;
   overflow: hidden;
   position: relative;
 `
 
 const CardImage = styled.img`
   width: 100%;
-  height: 60%;
-  object-fit: cover;
+  height: 50%;
+  object-fit: fill;
   margin-bottom: -0.3rem;
 `
 
@@ -52,6 +54,9 @@ const CardDescription = styled.p`
 `
 
 const CardButton = styled(Link)`
+  display: inline-block;
+  height: 1.5rem;
+  width: 5.125rem;
   background-color: #E66767;
   border: none;
   color: #FFEBD9;
