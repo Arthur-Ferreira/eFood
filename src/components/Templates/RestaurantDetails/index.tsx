@@ -1,43 +1,80 @@
-import React, { useEffect, useState } from "react"
-import RestaurantCard from "../../Molecules/Card"
+import type React from "react"
+import RestaurantMenu from "../../Organisms/RestaurantsMenu"
+import Footer from "../../Organisms/Footer"
+import { Container } from "../../Organisms/styles"
+import { MainContainer } from "../styles"
+import RestaurantCard from "../../Molecules/RestaurantCard"
+import RestaurantList from "./styles"
 
-interface Restaurant {
-  name: string
-  rating: number
-  description: string
-  image: string
-}
+import pizza from "../../../public/assets/pizza.png"
+import Hero from "../../Molecules/Hero"
 
-const Home: React.FC = () => {
-  const [restaurants, setRestaurants] = useState<Restaurant[]>([])
-
-  useEffect(() => {
-    // Fetch restaurant data from a mock API or a local JSON file
-    const fetchData = async () => {
-      const response = await fetch("/api/restaurants")
-      const data = await response.json()
-      setRestaurants(data)
-    }
-
-    fetchData()
-  }, [])
-
+const RestaurantDetails: React.FC = () => {
   return (
-    <div>
-      <h1>Restaurants</h1>
-      <div>
-        {restaurants.map(restaurant => (
-          <RestaurantCard
-            key={restaurant.name}
-            name={restaurant.name}
-            rating={restaurant.rating}
-            description={restaurant.description}
-            image={restaurant.image}
-          />
-        ))}
-      </div>
-    </div>
+    <>
+      <RestaurantMenu />
+      <Hero />
+      <MainContainer>
+        <RestaurantList>
+          <li>
+            <RestaurantCard
+              name={"Hioki Sushi"}
+              description={
+                "A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!"
+              }
+              image={pizza}
+            />
+          </li>
+          <li>
+            <RestaurantCard
+              name={"Hioki Sushi"}
+              description={
+                "A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!"
+              }
+              image={pizza}
+            />
+          </li>
+          <li>
+            <RestaurantCard
+              name={"Hioki Sushi"}
+              description={
+                "A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!"
+              }
+              image={pizza}
+            />
+          </li>
+          <li>
+            <RestaurantCard
+              name={"Hioki Sushi"}
+              description={
+                "A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!"
+              }
+              image={pizza}
+            />
+          </li>
+          <li>
+            <RestaurantCard
+              name={"Hioki Sushi"}
+              description={
+                "A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!"
+              }
+              image={pizza}
+            />
+          </li>
+          <li>
+            <RestaurantCard
+              name={"Hioki Sushi"}
+              description={
+                "A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!"
+              }
+              image={pizza}
+            />
+          </li>
+        </RestaurantList>
+      </MainContainer>
+      <Footer />
+    </>
   )
 }
 
-export default Home
+export default RestaurantDetails
