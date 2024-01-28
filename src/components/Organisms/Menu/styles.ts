@@ -14,7 +14,7 @@ const H1 = styled.h1`
   font-weight: 900;
   line-height: normal;
   width: 100%;
-  max-width: 38rem;
+  max-width: 33.688rem;
 `
 
 export { StyledHeader, H1 };
