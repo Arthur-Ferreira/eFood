@@ -13,11 +13,11 @@ const CardContainer = styled.div`
 const CardImage = styled.img`
   width: 100%;
   height: 50%;
-  object-fit: fill;
+  object-fit: cover;
   margin-bottom: -0.3rem;
   `
-  
-  const CardInfo = styled.div`
+
+const CardInfo = styled.div`
   height: 50%;
   display: flex;
   flex-direction: column;
@@ -52,8 +52,11 @@ const CardDescription = styled.p`
   font-size: 0.8rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 22px;
-  margin: 1rem 0;
+  line-height: 1.375rem;
+  text-overflow: ellipsis;
+  height: 100%;
+  max-height: 5.5rem;
+  overflow: hidden;
 `
 
 const CardButton = styled(Link)`

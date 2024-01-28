@@ -1,7 +1,8 @@
 import styled from "styled-components"
 
 const RestaurantCardContainer = styled.div`
-  background: #E66767;
+  border-radius: 8px;
+  background-color: #E66767;
   width: 100%;
   max-width: 20rem;
   overflow: hidden;

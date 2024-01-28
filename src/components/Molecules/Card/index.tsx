@@ -11,39 +11,32 @@ import {
   CardHeader,
 } from "./styles"
 
-import CardBadge from "../../Atoms/Badge"
-
 import start from "../../../public/start.svg"
+import CardBadge from "../../Atoms/Badge"
+import HighlightBadge from "../../Atoms/HighlightBadge"
 
-interface RestaurantCardProps {
-  name: string
-  rating: number
-  description: string
-  image: string
-  children: JSX.Element
-}
+const Card = ({ restaurant }: { restaurant: IRestaurant | undefined }) => {
+  if (!restaurant) {
+    return <h1>No Restaurants found!</h1>
+  }
 
-const Card: React.FC<RestaurantCardProps> = ({
-  name,
-  rating,
-  description,
-  image,
-  children
-}) => {
+  const { id, titulo, avaliacao, tipo, descricao, destacado, capa } = restaurant
+
   return (
     <CardContainer>
-      <CardImage src={image} alt={name} />
-      {children}
+      <CardImage src={capa} alt={titulo} />
+      <HighlightBadge destacado={destacado} />
+      <CardBadge>{tipo}</CardBadge>
       <CardInfo>
         <CardHeader>
-          <CardTitle>{name}</CardTitle>
+          <CardTitle>{titulo}</CardTitle>
           <CardRating>
-            {rating}
+            {avaliacao}
             <img src={start} alt="Rating star" />
           </CardRating>
         </CardHeader>
-        <CardDescription>{description}</CardDescription>
-        <CardButton to={"restaurant"}>Saiba mais</CardButton>
+        <CardDescription>{descricao}</CardDescription>
+        <CardButton to={`restaurant/${id}`}>Saiba mais</CardButton>
       </CardInfo>
     </CardContainer>
   )

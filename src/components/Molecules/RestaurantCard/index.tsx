@@ -27,7 +27,7 @@ const RestaurantCard: React.FC<RestaurantCardProps> = ({
       <RestaurantCardInfo>
         <RestaurantCardTitle>{name}</RestaurantCardTitle>
         <RestaurantCardDescription>{description}</RestaurantCardDescription>
-        <RestaurantCardButton>Adicionar ao carrinho</RestaurantCardButton>
+        <RestaurantCardButton>Mais detalhes</RestaurantCardButton>
       </RestaurantCardInfo>
     </RestaurantCardContainer>
   )
