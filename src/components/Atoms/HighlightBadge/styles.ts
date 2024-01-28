@@ -12,7 +12,7 @@ const Badge = styled.span`
   z-index: 1;
   position: absolute;
   top: 1.3rem;
-  right: 6rem;
+  right: 5rem;
 `
 
 export default Badge;
