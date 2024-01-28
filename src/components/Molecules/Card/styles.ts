@@ -5,8 +5,7 @@ import { Link } from "react-router-dom"
 const CardContainer = styled.div`
   width: 100%;
   max-width: 29.5rem;
-  height: 100%;
-  max-height: 25rem;
+  height: 25rem;
   overflow: hidden;
   position: relative;
 `
@@ -16,9 +15,13 @@ const CardImage = styled.img`
   height: 50%;
   object-fit: fill;
   margin-bottom: -0.3rem;
-`
-
-const CardInfo = styled.div`
+  `
+  
+  const CardInfo = styled.div`
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background: #FFF;
   border: 1px solid #E66767;
   border-top: none;
