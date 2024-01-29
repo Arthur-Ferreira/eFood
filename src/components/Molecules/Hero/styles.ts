@@ -24,9 +24,13 @@ const BackgroundContainer = styled.div`
   flex-direction: column;
   align-items: start;
   justify-content: space-between;
-  padding: 2.5rem 0;
   margin: 0 auto;
+  padding: 2.5rem 1rem;
   z-index: 1;
+  
+  @media(min-width: 64rem){
+    padding: 2.5rem 0;
+  }
 `
 
 const H2 = styled.h2`
