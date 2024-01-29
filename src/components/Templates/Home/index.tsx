@@ -17,7 +17,6 @@ const Home: React.FC = () => {
       .then(res => setRestaurants(res))
   }, [])
 
-  console.log(restaurants)
   return (
     <>
       <Header />

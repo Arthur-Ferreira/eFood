@@ -5,37 +5,45 @@ const RestaurantCardContainer = styled.div`
   background-color: #E66767;
   width: 100%;
   max-width: 20rem;
+  height: 100%;
+  max-height: 21.125rem;
   overflow: hidden;
   padding: 0.5rem;
 `
-
+  
 const RestaurantCardImage = styled.img`
   width: 100%;
   height: 50%;
   object-fit: cover;
 `
-
+  
 const RestaurantCardInfo = styled.div`
   border: 1px solid #E66767;
   border-top: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 49%;
 `
 
 const RestaurantCardTitle = styled.h3`
-color: #FFEBD9;
-font-size: 1rem;
-font-style: normal;
-font-weight: 900;
-line-height: normal;
+  color: #FFEBD9;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  
 `
-
+  
 const RestaurantCardDescription = styled.p`
   color: #FFEBD9;
   font-size: 0.8rem;
   font-style: normal;
   font-weight: 400;
   line-height: 1.375rem;
-  margin: 1rem 0;
-  
+  height: 100%;
+  max-height: 5.5rem;
+  overflow: hidden;
 `
 
 const RestaurantCardButton = styled.button`

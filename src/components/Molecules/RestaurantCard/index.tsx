@@ -9,24 +9,19 @@ import {
   RestaurantCardButton,
 } from "./styles"
 
-
-interface RestaurantCardProps {
-  name: string
-  description: string
-  image: string
+type RestaurantCardProps = {
+  prato: any
 }
 
-const RestaurantCard: React.FC<RestaurantCardProps> = ({
-  name,
-  description,
-  image,
-}) => {
+const RestaurantCard = ({ prato }: RestaurantCardProps): JSX.Element => {
+  const { nome, descricao, foto } = prato
+
   return (
     <RestaurantCardContainer>
-      <RestaurantCardImage src={image} alt={name} />
+      <RestaurantCardImage src={foto} alt={nome} />
       <RestaurantCardInfo>
-        <RestaurantCardTitle>{name}</RestaurantCardTitle>
-        <RestaurantCardDescription>{description}</RestaurantCardDescription>
+        <RestaurantCardTitle>{nome}</RestaurantCardTitle>
+        <RestaurantCardDescription>{descricao}</RestaurantCardDescription>
         <RestaurantCardButton>Mais detalhes</RestaurantCardButton>
       </RestaurantCardInfo>
     </RestaurantCardContainer>

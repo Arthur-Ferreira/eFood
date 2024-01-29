@@ -1,13 +1,22 @@
 import styled from "styled-components";
 
-import backgroundCover from "../../../public/assets/restaurantsBackground.png"
-
 const Background = styled.section`
   height: 280px;
-  background: url(${backgroundCover}), lightgray 50% / cover no-repeat;
+  position: relative;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    content: '';
+  }
 `
 
 const BackgroundContainer = styled.div`
+  position: relative;
   height: 100%;
   width: 100%;
   max-width: 64rem;
@@ -17,6 +26,7 @@ const BackgroundContainer = styled.div`
   justify-content: space-between;
   padding: 2.5rem 0;
   margin: 0 auto;
+  z-index: 1;
 `
 
 const H2 = styled.h2`
@@ -30,7 +40,6 @@ const H2 = styled.h2`
 const P = styled.p`
   color: #FFF;
   font-size: 2rem;
-  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 100;
   line-height: normal;
