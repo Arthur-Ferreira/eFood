@@ -1,5 +1,8 @@
 import type React from "react"
 
+import { useAppDispatch, useAppSelector } from "../../../app/hooks"
+import { close } from "../../../features/cart/cartSlice"
+
 import {
   AsideContainer,
   AsideOverlay,
@@ -9,21 +12,22 @@ import {
   AsideTotalHeader,
   AsideTotalButton,
 } from "./styles"
-import { useAppSelector } from "../../../app/hooks"
 
 import AsideItem from "../../Molecules/AsideCard"
 import { H2 } from "../../Molecules/Hero/styles"
 
 type RestaurantAsideProps = {
   isOpen: boolean
-  handleCloseAside: () => void
 }
 
-const Aside: React.FC<RestaurantAsideProps> = ({
-  isOpen,
-  handleCloseAside,
-}) => {
+const Aside: React.FC<RestaurantAsideProps> = ({ isOpen }) => {
+  const dispatch = useAppDispatch()
+
   const pratos = useAppSelector(state => state.cartList)
+
+  const handleCloseAside = () => {
+    dispatch(close())
+  }
 
   if (!isOpen) {
     return null

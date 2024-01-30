@@ -1,15 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 
-type initialStateType = {
-  cartList: ICart[];
-}
-
 const cartList: ICart[] = [];
 
+type initialStateType = {
+  cartList: ICart[];
+  isOpen: boolean
+}
 
 const initialState: initialStateType = {
   cartList,
+  isOpen: false
 };
 
 
@@ -39,6 +40,12 @@ export const cartSlice = createSlice({
     removeItem: (state, action: PayloadAction<number>) => {
       const cartId = action.payload;
       state.cartList = state.cartList.filter((cart) => cart.id !== cartId);
+    },
+    open: (state) => {
+      state.isOpen = true
+    },
+    close: (state) => {
+      state.isOpen = false
     }
   }
 });
@@ -46,6 +53,8 @@ export const cartSlice = createSlice({
 export const {
   addItem,
   removeItem,
+  open,
+  close,
 } = cartSlice.actions
 
 export default cartSlice.reducer
