@@ -11,6 +11,8 @@ import {
   ModalOverlay,
   ModalClose,
 } from "./styles"
+import { useAppDispatch } from "../../../app/hooks"
+import { addItem } from "../../../features/cart/cartSlice"
 
 type RestaurantModalProps = {
   isOpen: boolean
@@ -21,6 +23,7 @@ type RestaurantModalProps = {
     nome: string
     porcao?: string
     preco?: number
+    id?: number
   }
 }
 
@@ -29,15 +32,23 @@ const Modal: React.FC<RestaurantModalProps> = ({
   handleCloseModal,
   prato,
 }) => {
-  const { descricao, foto, nome, porcao, preco } = prato
+  const dispatch = useAppDispatch()
+  const { descricao, foto, nome, porcao, preco, id } = prato
 
   if (!isOpen) {
     return null
   }
 
+  const handleClick = () => {
+    if (nome && preco && id) {
+      dispatch(addItem(id, nome, preco, foto))
+      handleCloseModal()
+    }
+  }
+
   return (
     <>
-      <ModalOverlay />
+      <ModalOverlay onClick={handleCloseModal} />
       <ModalContainer>
         <ModalClose onClick={handleCloseModal} />
         <ModalImage src={foto} alt={nome} />
@@ -47,7 +58,9 @@ const Modal: React.FC<RestaurantModalProps> = ({
             {descricao}
             <ModalPorcao>{porcao}</ModalPorcao>
           </ModalDescription>
-          <ModalButton>Adicionar ao carrinho - R$ {preco}</ModalButton>
+          <ModalButton onClick={handleClick}>
+            Adicionar ao carrinho - R$ {preco}
+          </ModalButton>
         </ModalInfo>
       </ModalContainer>
     </>

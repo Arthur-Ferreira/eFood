@@ -19,13 +19,20 @@ export const cartSlice = createSlice({
   reducers: {
     addItem: {
       reducer: (state, action: PayloadAction<ICart>) => {
-        state.cartList.push(action.payload);
+        const product = state.cartList.find((item) => item.id === action.payload.id)
+
+        if (!product) {
+          state.cartList.push(action.payload);
+        } else {
+          alert('Product allready at cart')
+        }
       },
-      prepare: (id: number, nome: string, preco: number) => ({
+      prepare: (id: number, nome: string, preco: number, foto: string) => ({
         payload: {
           id,
           nome,
-          preco
+          preco,
+          foto
         } as ICart,
       }),
     },

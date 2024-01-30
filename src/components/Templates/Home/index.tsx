@@ -7,6 +7,7 @@ import Footer from "../../Organisms/Footer"
 
 import CardList from "./styles"
 import { MainContainer } from "../styles"
+import { H1 } from "../../Organisms/Menu/styles"
 
 const Home: React.FC = () => {
   const [restaurants, setRestaurants] = useState<IRestaurant[]>([])
@@ -22,7 +23,7 @@ const Home: React.FC = () => {
       <Header />
       <MainContainer>
         {!restaurants || restaurants.length === 0 ? (
-          <h1>No restaurants found!</h1>
+          <H1>Carregando...</H1>
         ) : (
           <CardList>
             {restaurants.map(restaurant => (
