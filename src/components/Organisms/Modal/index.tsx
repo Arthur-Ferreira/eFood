@@ -11,39 +11,33 @@ import {
   ModalOverlay,
   ModalClose,
 } from "./styles"
-import { useAppDispatch } from "../../../app/hooks"
-import { addItem } from "../../../features/cart/cartSlice"
+import { useAppDispatch, useAppSelector } from "../../../app/hooks"
+import { addItem, close, openAside } from "../../../features/cart/cartSlice"
 
 type RestaurantModalProps = {
   isOpen: boolean
-  handleCloseModal: () => void
-  prato: {
-    descricao: string
-    foto: string
-    nome: string
-    porcao?: string
-    preco?: number
-    id?: number
-  }
 }
 
-const Modal: React.FC<RestaurantModalProps> = ({
-  isOpen,
-  handleCloseModal,
-  prato,
-}) => {
+const Modal: React.FC<RestaurantModalProps> = ({ isOpen }) => {
   const dispatch = useAppDispatch()
-  const { descricao, foto, nome, porcao, preco, id } = prato
+  const modalData = useAppSelector(state => state.modalData)
 
-  if (!isOpen) {
+  if (!isOpen || !modalData) {
     return null
   }
+
+  const { descricao, foto, nome, porcao, preco, id } = modalData
 
   const handleClick = () => {
     if (nome && preco && id) {
       dispatch(addItem(id, nome, preco, foto))
-      handleCloseModal()
+      dispatch(close())
     }
+    dispatch(openAside())
+  }
+
+  const handleCloseModal = () => {
+    dispatch(close())
   }
 
   return (

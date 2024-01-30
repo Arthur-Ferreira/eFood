@@ -18,7 +18,7 @@ const AsideContainer = styled.aside`
   height: 100%;
   overflow: hidden;
   padding: 2rem 0.5rem;
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   z-index: 2;

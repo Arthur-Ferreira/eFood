@@ -8,7 +8,7 @@ const ModalOverlay = styled.div`
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
 `
 
@@ -21,7 +21,7 @@ const ModalContainer = styled.article`
   width: 100%;
   max-width: 25rem;
   height: 100%;
-  max-height: 37.5rem;
+  max-height: 39.5rem;
   overflow: hidden;
   padding: 2rem;
   position: fixed;

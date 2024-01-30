@@ -1,21 +1,22 @@
 import type React from "react"
-import { Link } from "react-router-dom"
 
+import { Link } from "react-router-dom"
 import { useAppDispatch, useAppSelector } from "../../../app/hooks"
+
 
 import logo from "../../../public/logo.svg"
 import { RestaurantHeader, RestaurantContainer, H2 } from "./styles"
 import { LogoImg } from "../styles"
 import Aside from "../Aside"
-import { open } from "../../../features/cart/cartSlice"
+import { openAside } from "../../../features/cart/cartSlice"
 
-const RestaurantMenu = () => {
+const RestaurantMenu: React.FC = () => {
   const dispatch = useAppDispatch()
   const pratos = useAppSelector(state => state.cartList)
-  const isOpen = useAppSelector(state => state.isOpen)
+  const isAsideOpen = useAppSelector(state => state.isAsideOpen)
 
   const handleOpenAside = () => {
-    dispatch(open())
+    dispatch(openAside())
   }
 
   return (
@@ -35,7 +36,7 @@ const RestaurantMenu = () => {
           </H2>
         </RestaurantContainer>
       </RestaurantHeader>
-      <Aside isOpen={isOpen} />
+      <Aside isOpen={isAsideOpen} />
     </>
   )
 }

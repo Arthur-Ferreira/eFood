@@ -18,4 +18,14 @@ declare global {
     preco: number
     foto: string
   }
+
+  interface Prato {
+    nome: string;
+    descricao: string;
+    foto: string;
+    porcao?: string;
+    preco?: number;
+    id?: number;
+  }
+
 }

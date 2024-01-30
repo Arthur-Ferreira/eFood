@@ -1,5 +1,7 @@
 import type React from "react"
-import { useState } from "react"
+
+import { useAppDispatch, useAppSelector } from "../../../app/hooks"
+import { open } from "../../../features/cart/cartSlice"
 
 import Modal from "../../Organisms/Modal"
 
@@ -17,21 +19,23 @@ type RestaurantCardProps = {
     nome: string
     descricao: string
     foto: string
+    porcao?: string
+    preco?: number
+    id?: number
   }
 }
 
 const RestaurantCard: React.FC<RestaurantCardProps> = ({ prato }) => {
+  const dispatch = useAppDispatch()
+  const isOpen = useAppSelector(state => state.isOpen)
+
   const { nome, descricao, foto } = prato
 
-  const [isModalOpen, setIsModalOpen] = useState(false)
-
   const handleOpenModal = () => {
-    setIsModalOpen(true)
-  }
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false)
-  }
+    const { nome, descricao, foto, porcao, preco, id } = prato;
+    dispatch(open({ nome, descricao, foto, porcao, preco, id }));
+  };
+  
 
   return (
     <>
@@ -45,7 +49,7 @@ const RestaurantCard: React.FC<RestaurantCardProps> = ({ prato }) => {
           </RestaurantCardButton>
         </RestaurantCardInfo>
       </RestaurantCardContainer>
-      <Modal isOpen={isModalOpen} handleCloseModal={handleCloseModal} prato={prato} />
+      <Modal isOpen={isOpen} />
     </>
   )
 }

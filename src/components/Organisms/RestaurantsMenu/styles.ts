@@ -11,6 +11,11 @@ const RestaurantHeader = styled.header`
 
 const RestaurantContainer = styled(Container)`
   flex-direction: row;
+  padding: 2.5rem 1rem;
+  
+  @media(min-width: 64rem){
+    padding: 2.5rem 0;
+  }
 `
 
 const H2 = styled.h2`
