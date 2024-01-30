@@ -1,4 +1,4 @@
-export {};
+export { };
 
 declare global {
   interface IRestaurant {
@@ -10,5 +10,11 @@ declare global {
     descricao: string;
     capa: string;
     cardapio: any[];
+  }
+
+  interface ICart {
+    id: number
+    nome: string
+    preco: number
   }
 }
