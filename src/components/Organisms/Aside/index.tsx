@@ -1,19 +1,13 @@
 import type React from "react"
 
-import {
-  AsideContainer,
-  AsideOverlay,
-  AsideClose,
-  AsideList,
-  AsideTotal,
-  AsideTotalHeader,
-  AsideTotalButton,
-} from "./styles"
+import { AsideContainer, AsideOverlay, AsideClose } from "./styles"
 import { useAppDispatch, useAppSelector } from "../../../app/hooks"
+import { AsideState } from "../../../features/aside/asideSlice"
 
-import AsideItem from "../../Molecules/AsideCard"
-import { H2 } from "../../Molecules/Hero/styles"
 import { closeAside } from "../../../features/cart/cartSlice"
+import Cart from "../../Molecules/Cart"
+import Delivery from "../../Molecules/Delivery"
+
 
 type RestaurantAsideProps = {
   isOpen: boolean
@@ -21,7 +15,8 @@ type RestaurantAsideProps = {
 
 const Aside: React.FC<RestaurantAsideProps> = ({ isOpen }) => {
   const dispatch = useAppDispatch()
-  const pratos = useAppSelector(state => state.cartList)
+  const currentAsideState = useAppSelector(state => state.aside.currentAsideState)
+
 
   if (!isOpen) {
     return null
@@ -31,37 +26,14 @@ const Aside: React.FC<RestaurantAsideProps> = ({ isOpen }) => {
     dispatch(closeAside())
   }
 
-  const getTotalPrices = () => {
-    return pratos.reduce((accumulator, current) => {
-      return (accumulator += current.preco)
-    }, 0)
-  }
-
   return (
     <>
       <AsideOverlay onClick={handleCloseAside} />
       <AsideContainer>
         <AsideClose onClick={handleCloseAside} />
-        {!pratos || pratos.length === 0 ? (
-          <H2>{pratos.length} produtos no carrinho</H2>
-        ) : (
-          <>
-            <AsideList>
-              {pratos.map(prato => (
-                <li key={prato.id}>
-                  <AsideItem prato={prato} />
-                </li>
-              ))}
-            </AsideList>
-            <AsideTotal>
-              <AsideTotalHeader>
-                <h3>Valor Total</h3>
-                <p>R$ {getTotalPrices().toFixed(2)}</p>
-              </AsideTotalHeader>
-              <AsideTotalButton>Continuar com a entrega</AsideTotalButton>
-            </AsideTotal>
-          </>
-        )}
+        {currentAsideState === AsideState.Cart && <Cart />}
+        {currentAsideState === AsideState.Delivery && <Delivery />}
+        {/* {currentAsideState === AsideState.CartAddress && <CartAddress />} */}
       </AsideContainer>
     </>
   )

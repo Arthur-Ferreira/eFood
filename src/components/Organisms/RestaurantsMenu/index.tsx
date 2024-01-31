@@ -12,8 +12,8 @@ import { openAside } from "../../../features/cart/cartSlice"
 
 const RestaurantMenu: React.FC = () => {
   const dispatch = useAppDispatch()
-  const pratos = useAppSelector(state => state.cartList)
-  const isAsideOpen = useAppSelector(state => state.isAsideOpen)
+  const pratos = useAppSelector(state => state.cart.cartList)
+  const isAsideOpen = useAppSelector(state => state.cart.isAsideOpen)
 
   const handleOpenAside = () => {
     dispatch(openAside())

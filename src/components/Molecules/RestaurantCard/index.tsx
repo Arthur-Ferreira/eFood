@@ -27,7 +27,7 @@ type RestaurantCardProps = {
 
 const RestaurantCard: React.FC<RestaurantCardProps> = ({ prato }) => {
   const dispatch = useAppDispatch()
-  const isOpen = useAppSelector(state => state.isOpen)
+  const isOpen = useAppSelector(state => state.cart.isOpen)
 
   const { nome, descricao, foto } = prato
 

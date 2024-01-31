@@ -20,7 +20,7 @@ type RestaurantModalProps = {
 
 const Modal: React.FC<RestaurantModalProps> = ({ isOpen }) => {
   const dispatch = useAppDispatch()
-  const modalData = useAppSelector(state => state.modalData)
+  const modalData = useAppSelector(state => state.cart.modalData)
 
   if (!isOpen || !modalData) {
     return null

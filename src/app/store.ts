@@ -1,9 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit'
 
 import cartReducer from '../features/cart/cartSlice';
+import asideReducer from '../features/aside/asideSlice';
 
 export const store = configureStore({
-  reducer: cartReducer,
+  reducer: {
+    cart: cartReducer,
+    aside: asideReducer
+
+  }
 })
 
 // Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
