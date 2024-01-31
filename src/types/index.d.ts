@@ -1,4 +1,4 @@
-
+export { }
 declare global {
   interface IRestaurant {
     id: number;

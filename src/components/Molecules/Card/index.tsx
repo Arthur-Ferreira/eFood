@@ -1,4 +1,5 @@
-import type React from "react"
+import CardBadge from "../../Atoms/Badge"
+import HighlightBadge from "../../Atoms/HighlightBadge"
 
 import {
   CardContainer,
@@ -12,8 +13,6 @@ import {
 } from "./styles"
 
 import start from "../../../public/start.svg"
-import CardBadge from "../../Atoms/Badge"
-import HighlightBadge from "../../Atoms/HighlightBadge"
 
 const Card = ({ restaurant }: { restaurant: IRestaurant | undefined }) => {
   if (!restaurant) {

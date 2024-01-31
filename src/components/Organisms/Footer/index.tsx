@@ -8,7 +8,7 @@ import twitter from "../../../public/social/twitter.svg"
 import { StyledFooter, SocialMedia, Small } from "./styles"
 import { Container, LogoImg } from "../styles"
 
-const Footer = () => {
+const Footer: React.FC = () => {
   return (
     <StyledFooter>
       <Container>
