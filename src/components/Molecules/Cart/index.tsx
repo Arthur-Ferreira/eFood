@@ -2,6 +2,10 @@ import type React from "react"
 
 import { useAppDispatch, useAppSelector } from "../../../app/hooks"
 import { AsideState, setAsideState } from "../../../features/aside/asideSlice"
+import { getTotalPrice, parseToBrl } from "../../../utils/fn"
+
+import AsideItem from "../AsideItem"
+import { H2 } from "../Hero/styles"
 
 import {
   AsideList,
@@ -10,22 +14,13 @@ import {
   AsideTotalButton,
 } from "./styles"
 
-import AsideItem from "../AsideItem"
-import { H2 } from "../Hero/styles"
-
 const Cart: React.FC = () => {
-  const dispatch = useAppDispatch();
+  const dispatch = useAppDispatch()
   const pratos = useAppSelector(state => state.cart.cartList)
 
-  const getTotalPrices = () => {
-    return pratos.reduce((accumulator, current) => {
-      return (accumulator += current.preco)
-    }, 0)
-  }
-
   const showDelivery = () => {
-    dispatch(setAsideState(AsideState.Delivery));
-  };
+    dispatch(setAsideState(AsideState.Form))
+  }
 
   return (
     <>
@@ -43,9 +38,11 @@ const Cart: React.FC = () => {
           <AsideTotal>
             <AsideTotalHeader>
               <h3>Valor Total</h3>
-              <p>R$ {getTotalPrices().toFixed(2)}</p>
+              <p>{parseToBrl(getTotalPrice(pratos))}</p>
             </AsideTotalHeader>
-            <AsideTotalButton onClick={showDelivery}>Continuar com a entrega</AsideTotalButton>
+            <AsideTotalButton onClick={showDelivery}>
+              Continuar com a entrega
+            </AsideTotalButton>
           </AsideTotal>
         </>
       )}
