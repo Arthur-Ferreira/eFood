@@ -27,7 +27,7 @@ export const cartSlice = createSlice({
         if (!product) {
           state.cartList.push(action.payload);
         } else {
-          alert('Product allready at cart')
+          alert('Product already at cart')
         }
       },
       prepare: (id: number, nome: string, preco: number, foto: string) => ({
@@ -42,6 +42,9 @@ export const cartSlice = createSlice({
     removeItem: (state, action: PayloadAction<number>) => {
       const cartId = action.payload;
       state.cartList = state.cartList.filter((cart) => cart.id !== cartId);
+    },
+    clear: (state) => {
+      state.cartList = []
     },
     open: (state, action: PayloadAction<Prato>) => {
       state.isOpen = true;
@@ -63,6 +66,7 @@ export const cartSlice = createSlice({
 export const {
   addItem,
   removeItem,
+  clear,
   open,
   close,
   openAside,

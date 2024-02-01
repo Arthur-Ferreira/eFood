@@ -3,9 +3,7 @@ import type { PayloadAction } from '@reduxjs/toolkit';
 
 export enum AsideState {
   Cart,
-  Delivery,
-  Payment,
-  Checkout,
+  Form
 }
 
 type AsideStateSlice = {
