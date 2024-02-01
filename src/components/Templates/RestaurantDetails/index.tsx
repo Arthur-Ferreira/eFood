@@ -1,47 +1,41 @@
 import type React from "react"
-import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 
-import RestaurantMenu from "../../Organisms/RestaurantsMenu"
-import Footer from "../../Organisms/Footer"
-import Hero from "../../Molecules/Hero"
+import { useGetRestaurantQuery } from "../../../utils/api"
 
-import RestaurantList from "./styles"
-import { MainContainer } from "../styles"
+import RestaurantMenu from "../../Organisms/RestaurantsMenu"
+import Hero from "../../Molecules/Hero"
 import RestaurantCard from "../../Molecules/RestaurantCard"
+import Footer from "../../Organisms/Footer"
+
+import { MainContainer } from "../styles"
+import RestaurantList from "./styles"
 
 const RestaurantDetails: React.FC = () => {
   const { id } = useParams<{ id: string }>()
-  const [restaurant, setRestaurant] = useState<IRestaurant | null>(null)
+  const { data: restaurant } = useGetRestaurantQuery(id!)
 
-  useEffect(() => {
-    fetch(`https://fake-api-tau.vercel.app/api/efood/restaurantes/${id}`)
-      .then(res => res.json())
-      .then(res => setRestaurant(res))
-  }, [id])
-
-  if (!restaurant) {
-    return null
-  }
+  if (!restaurant) return null
 
   const { cardapio } = restaurant
 
   return (
     <>
       <RestaurantMenu />
-      <Hero capa={restaurant.capa} tipo={restaurant.tipo} titulo={restaurant.titulo} />
+      <Hero
+        capa={restaurant.capa}
+        tipo={restaurant.tipo}
+        titulo={restaurant.titulo}
+      />
       <MainContainer>
-        {!restaurant ? (
-          <h1>No restaurants found!</h1>
-        ) : (
-          <RestaurantList>
-            {cardapio && cardapio.map((prato: any) => (
+        <RestaurantList>
+          {cardapio &&
+            cardapio.map((prato: any) => (
               <li key={prato.id}>
                 <RestaurantCard prato={prato} />
               </li>
             ))}
-          </RestaurantList>
-        )}
+        </RestaurantList>
       </MainContainer>
       <Footer />
     </>
