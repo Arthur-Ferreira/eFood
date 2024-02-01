@@ -1,5 +1,9 @@
 import type React from "react"
 
+import { useAppDispatch } from "../../../app/hooks"
+import { removeItem } from "../../../features/cart/cartSlice"
+import { parseToBrl } from "../../../utils/fn"
+
 import {
   AsideContent,
   AsideImage,
@@ -8,8 +12,6 @@ import {
   AsidePreco,
   AsideButton,
 } from "./styles"
-import { useAppDispatch } from "../../../app/hooks"
-import { removeItem } from "../../../features/cart/cartSlice"
 
 type RestaurantAsideProps = {
   prato: {
@@ -36,7 +38,7 @@ const AsideItem: React.FC<RestaurantAsideProps> = ({ prato }) => {
       <AsideImage src={foto} alt={nome} />
       <AsideInfo>
         <AsideTitle>{nome}</AsideTitle>
-        <AsidePreco>R$ {preco}</AsidePreco>
+        <AsidePreco>{parseToBrl(preco)}</AsidePreco>
         <AsideButton onClick={onRemoveItem} />
       </AsideInfo>
     </AsideContent>

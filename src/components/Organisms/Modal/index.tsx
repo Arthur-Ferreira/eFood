@@ -13,6 +13,7 @@ import {
 } from "./styles"
 import { useAppDispatch, useAppSelector } from "../../../app/hooks"
 import { addItem, close, openAside } from "../../../features/cart/cartSlice"
+import { parseToBrl } from "../../../utils/fn"
 
 type RestaurantModalProps = {
   isOpen: boolean
@@ -53,7 +54,7 @@ const Modal: React.FC<RestaurantModalProps> = ({ isOpen }) => {
             <ModalPorcao>{porcao}</ModalPorcao>
           </ModalDescription>
           <ModalButton onClick={handleClick}>
-            Adicionar ao carrinho - R$ {preco}
+            Adicionar ao carrinho - {parseToBrl(preco)}
           </ModalButton>
         </ModalInfo>
       </ModalContainer>
