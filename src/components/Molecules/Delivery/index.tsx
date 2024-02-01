@@ -1,10 +1,13 @@
 import type React from "react"
+import { Formik, Form } from "formik"
 
-import { AsideState, setAsideState } from "../../../features/aside/asideSlice"
 import { useAppDispatch } from "../../../app/hooks"
+import { AsideState, setAsideState } from "../../../features/aside/asideSlice"
+import { deliverySchema } from "../../../utils/schemas"
+
+import { H2 } from "../Hero/styles"
 
 import {
-  Form,
   FormLabel,
   FormInput,
   FormAddress,
@@ -12,58 +15,125 @@ import {
   FormTotalButton,
 } from "./styles"
 
-import { H2 } from "../Hero/styles"
+interface DeliveryProps {
+  nextStep: () => void;
+  handleChange: (data: any) => void;
+}
 
-const Delivery: React.FC = () => {
+const Delivery: React.FC<DeliveryProps> = ({ nextStep, handleChange }) => {
+
   const dispatch = useAppDispatch()
-
-  const showPayment = () => {
-    dispatch(setAsideState(AsideState.Payment))
-  }
 
   const showCart = () => {
     dispatch(setAsideState(AsideState.Cart))
   }
 
+  const handleSubmit = (values: any) => {
+    handleChange(values);
+    nextStep();
+  }
+
   return (
     <>
       <H2>Entrega</H2>
-      <Form>
-        <div>
-          <FormLabel htmlFor="name">Quem irá receber</FormLabel>
-          <FormInput type="text" id="name" name="name" required />
-        </div>
-        <div>
-          <FormLabel htmlFor="address">Endereço</FormLabel>
-          <FormInput type="text" id="address" name="address" required />
-        </div>
-        <div>
-          <FormLabel htmlFor="city">Cidade</FormLabel>
-          <FormInput type="text" id="city" name="city" required />
-        </div>
-        <FormAddress>
-          <div>
-            <FormLabel htmlFor="code">CEP</FormLabel>
-            <FormInput type="text" id="code" name="code" required />
-          </div>
-          <div>
-            <FormLabel htmlFor="number">Número</FormLabel>
-            <FormInput type="text" id="number" name="number" required />
-          </div>
-        </FormAddress>
-        <div>
-          <FormLabel htmlFor="complement">Complemento (opcional)</FormLabel>
-          <FormInput type="text" id="complement" name="complement" />
-        </div>
-        <FormTotalActions>
-          <FormTotalButton onClick={showPayment}>
-            Continuar com o pagamento
-          </FormTotalButton>
-          <FormTotalButton onClick={showCart}>
-            Voltar para o carrinho
-          </FormTotalButton>
-        </FormTotalActions>
-      </Form>
+      <Formik
+        initialValues={{
+          name: "",
+          address: "",
+          city: "",
+          code: "",
+          number: "",
+          complement: "",
+        }}
+        validationSchema={deliverySchema}
+        onSubmit={handleSubmit}
+      >
+        {({ values, handleChange, handleBlur }) => (
+          <Form>
+            <div>
+              <FormLabel htmlFor="name">Quem irá receber</FormLabel>
+              <FormInput
+                type="text"
+                id="name"
+                name="name"
+                required
+                value={values.name}
+                onChange={handleChange}
+                onBlur={handleBlur}
+              />
+            </div>
+            <div>
+              <FormLabel htmlFor="address">Endereço</FormLabel>
+              <FormInput
+                type="text"
+                id="address"
+                name="address"
+                required
+                value={values.address}
+                onChange={handleChange}
+                onBlur={handleBlur}
+              />
+            </div>
+            <div>
+              <FormLabel htmlFor="city">Cidade</FormLabel>
+              <FormInput
+                type="text"
+                id="city"
+                name="city"
+                required
+                value={values.city}
+                onChange={handleChange}
+                onBlur={handleBlur}
+              />
+            </div>
+            <FormAddress>
+              <div>
+                <FormLabel htmlFor="code">CEP</FormLabel>
+                <FormInput
+                  type="text"
+                  id="code"
+                  name="code"
+                  required
+                  value={values.code}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                />
+              </div>
+              <div>
+                <FormLabel htmlFor="number">Número</FormLabel>
+                <FormInput
+                  type="text"
+                  id="number"
+                  name="number"
+                  required
+                  value={values.number}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                />
+              </div>
+            </FormAddress>
+            <div>
+              <FormLabel htmlFor="complement">Complemento (opcional)</FormLabel>
+              <FormInput
+                type="text"
+                id="complement"
+                name="complement"
+                value={values.complement}
+                onChange={handleChange}
+                onBlur={handleBlur}
+              />
+            </div>
+            <FormTotalActions>
+              <FormTotalButton type="submit">
+                Continuar com o pagamento
+              </FormTotalButton>
+              <FormTotalButton onClick={showCart}>
+                Voltar para o carrinho
+              </FormTotalButton>
+            </FormTotalActions>
+          </Form>
+        )}
+      </Formik>
     </>
   )
 }

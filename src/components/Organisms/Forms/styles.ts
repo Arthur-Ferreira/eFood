@@ -1,5 +1,9 @@
 import styled from "styled-components"
 
+const FormSection = styled.section`
+  margin-bottom: 0.5rem;
+`
+
 const FormLabel = styled.label`
   display: block;
   color: #FFEBD9;
@@ -22,6 +26,40 @@ const FormInput = styled.input`
   line-height: normal;
   padding: 0.5rem;
   border-style: none;
+`
+
+const FormCardInfo = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 2.125rem;
+  color: #FFEBD9;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  
+  div:first-child {
+    width: 100%;
+  }
+
+  div:last-child {
+    width: 40%;
+  }
+`
+
+const FormDate = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 2.125rem;
+  color: #FFEBD9;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  
+  div {
+    width: 100%;
+  }
 `
 
 const FormAddress = styled.div`
@@ -73,8 +111,11 @@ const FormTotalButton = styled.button`
 `
 
 export {
+  FormSection,
   FormLabel,
   FormInput,
+  FormCardInfo,
+  FormDate,
   FormAddress,
   FormTotalActions,
   FormTotalButton,

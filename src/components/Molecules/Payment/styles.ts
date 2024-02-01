@@ -1,13 +1,5 @@
 import styled from "styled-components"
 
-
-const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin-top: 1rem;
-`
-
 const FormLabel = styled.label`
   display: block;
   color: #FFEBD9;
@@ -100,7 +92,6 @@ const FormTotalButton = styled.button`
 `
 
 export {
-  Form,
   FormLabel,
   FormInput,
   FormCardInfo,

@@ -6,8 +6,8 @@ import { AsideState } from "../../../features/aside/asideSlice"
 import { closeAside } from "../../../features/cart/cartSlice"
 
 import Cart from "../../Molecules/Cart"
-import Delivery from "../../Molecules/Delivery"
-import Payment from "../../Molecules/Payment"
+import Forms from "../../Organisms/Forms"
+
 
 type RestaurantAsideProps = {
   isOpen: boolean
@@ -33,8 +33,7 @@ const Aside: React.FC<RestaurantAsideProps> = ({ isOpen }) => {
       <AsideContainer>
         <AsideClose onClick={handleCloseAside} />
         {currentAsideState === AsideState.Cart && <Cart />}
-        {currentAsideState === AsideState.Delivery && <Delivery />}
-        {currentAsideState === AsideState.Payment && <Payment />}
+        {currentAsideState === AsideState.Form && <Forms />}
       </AsideContainer>
     </>
   )
