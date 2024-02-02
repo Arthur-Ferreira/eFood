@@ -1,11 +1,11 @@
 import CardBadge from "../../Atoms/Badge"
 import HighlightBadge from "../../Atoms/HighlightBadge"
+import { H3 } from "../../Atoms"
 
 import {
   CardContainer,
   CardImage,
   CardInfo,
-  CardTitle,
   CardRating,
   CardDescription,
   CardButton,
@@ -28,7 +28,7 @@ const Card = ({ restaurant }: { restaurant: IRestaurant | undefined }) => {
       <CardBadge>{tipo}</CardBadge>
       <CardInfo>
         <CardHeader>
-          <CardTitle>{titulo}</CardTitle>
+          <H3>{titulo}</H3>
           <CardRating>
             {avaliacao}
             <img src={start} alt="Rating star" />

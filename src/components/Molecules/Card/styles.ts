@@ -1,6 +1,8 @@
 import styled from "styled-components"
 
 import { Link } from "react-router-dom"
+import { colors } from "../../Global/vars"
+import { P } from "../../Atoms/Typography/styles"
 
 const CardContainer = styled.div`
   width: 100%;
@@ -22,22 +24,14 @@ const CardInfo = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: #FFF;
-  border: 1px solid #E66767;
+  background: ${colors.white};
+  border: 1px solid ${colors.indianRed};
   border-top: none;
   padding: 0.6rem;
 `
 
-const CardTitle = styled.h3`
-  color: #E66767;
-  font-size: 1.1rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-`
-
 const CardRating = styled.p`
-  color: #E66767;
+  color: ${colors.indianRed};
   font-size: 1.1rem;
   font-style: normal;
   font-weight: 700;
@@ -47,11 +41,8 @@ const CardRating = styled.p`
   gap: 0.5rem;
 `
 
-const CardDescription = styled.p`
-  color: #E66767;
-  font-size: 0.8rem;
-  font-style: normal;
-  font-weight: 400;
+const CardDescription = styled(P)`
+  color: ${colors.indianRed};
   line-height: 1.375rem;
   text-overflow: ellipsis;
   height: 100%;
@@ -63,9 +54,9 @@ const CardButton = styled(Link)`
   display: inline-block;
   height: 1.5rem;
   width: 5.125rem;
-  background-color: #E66767;
+  background-color: ${colors.indianRed};
   border: none;
-  color: #FFEBD9;
+  color: ${colors.antiqueWhite};
   text-align: center;
   font-size: 0.8rem;
   font-style: normal;
@@ -86,7 +77,6 @@ export {
   CardContainer,
   CardImage,
   CardInfo,
-  CardTitle,
   CardRating,
   CardDescription,
   CardButton,
