@@ -5,9 +5,10 @@ import { useAppDispatch } from "../../../app/hooks"
 import { AsideState, setAsideState } from "../../../features/aside/asideSlice"
 import { deliverySchema } from "../../../utils/schemas"
 
-import { H2 } from "../Hero/styles"
+import { H4 } from "../../Atoms"
 
 import {
+  FormSection,
   FormLabel,
   FormInput,
   FormAddress,
@@ -16,12 +17,11 @@ import {
 } from "./styles"
 
 interface DeliveryProps {
-  nextStep: () => void;
-  handleChange: (data: any) => void;
+  nextStep: () => void
+  handleChange: (data: any) => void
 }
 
 const Delivery: React.FC<DeliveryProps> = ({ nextStep, handleChange }) => {
-
   const dispatch = useAppDispatch()
 
   const showCart = () => {
@@ -29,13 +29,13 @@ const Delivery: React.FC<DeliveryProps> = ({ nextStep, handleChange }) => {
   }
 
   const handleSubmit = (values: any) => {
-    handleChange(values);
-    nextStep();
+    handleChange(values)
+    nextStep()
   }
 
   return (
     <>
-      <H2>Entrega</H2>
+      <H4>Entrega</H4>
       <Formik
         initialValues={{
           name: "",
@@ -49,7 +49,7 @@ const Delivery: React.FC<DeliveryProps> = ({ nextStep, handleChange }) => {
         onSubmit={handleSubmit}
       >
         {({ values, handleChange, handleBlur }) => (
-          <Form>
+          <FormSection>
             <div>
               <FormLabel htmlFor="name">Quem irá receber</FormLabel>
               <FormInput
@@ -131,7 +131,7 @@ const Delivery: React.FC<DeliveryProps> = ({ nextStep, handleChange }) => {
                 Voltar para o carrinho
               </FormTotalButton>
             </FormTotalActions>
-          </Form>
+          </FormSection>
         )}
       </Formik>
     </>
