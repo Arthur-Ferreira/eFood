@@ -1,12 +1,10 @@
 import styled from "styled-components"
 
-const CheckoutDescription = styled.label`
-  color: #FFEBD9;
-  font-size: 0.875rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  margin-bottom: 0.5rem;
+const CheckoutDescription = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 1rem 0 1.5rem;
 `
 
 const CheckoutButton = styled.button`
