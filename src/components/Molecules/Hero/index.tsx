@@ -1,6 +1,7 @@
 import type React from "react"
 
-import { Background, BackgroundContainer, H2, P } from "./styles"
+import { H2 } from "../../Atoms"
+import { Background, BackgroundContainer, P } from "./styles"
 
 type RestaurantHeroProps = {
   capa: string

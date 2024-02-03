@@ -33,14 +33,6 @@ const BackgroundContainer = styled.div`
   }
 `
 
-const H2 = styled.h2`
-  color: #FFF;
-  font-size: 2rem;
-  font-style: normal;
-  font-weight: 900;
-  line-height: normal;
-`
-
 const P = styled.p`
   color: #FFF;
   font-size: 2rem;
@@ -51,4 +43,4 @@ const P = styled.p`
 
 
 
-export { Background, BackgroundContainer, H2, P }
+export { Background, BackgroundContainer, P }
