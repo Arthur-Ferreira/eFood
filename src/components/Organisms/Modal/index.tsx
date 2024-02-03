@@ -51,7 +51,7 @@ const Modal: React.FC<RestaurantModalProps> = ({ isOpen }) => {
           <ModalTitle>{nome}</ModalTitle>
           <ModalDescription>
             {descricao}
-            <ModalPorcao>{porcao}</ModalPorcao>
+            <ModalPorcao>Serve: {porcao}</ModalPorcao>
           </ModalDescription>
           <ModalButton onClick={handleClick}>
             Adicionar ao carrinho - {parseToBrl(preco)}

@@ -1,6 +1,8 @@
 import styled from "styled-components"
 
 import close from "../../../public/close.svg"
+import { breakpoints, colors } from "../../Global/vars"
+import { H4, P } from "../../Atoms/Typography/styles"
 
 const ModalOverlay = styled.div`
   position: fixed;
@@ -17,7 +19,7 @@ const ModalContainer = styled.article`
   flex-direction: column;
   gap: 1.5rem;
   border-radius: 8px;
-  background-color: #E66767;
+  background-color: ${colors.indianRed};
   width: 100%;
   max-width: 25rem;
   height: 100%;
@@ -32,8 +34,7 @@ const ModalContainer = styled.article`
   margin: auto;
   z-index: 2;
   
-  @media(min-width: 64rem) {
-    
+  @media(min-width: ${breakpoints.desktop}) {
     flex-direction: row;
     max-width: 64rem;
     max-height: 21.5rem;
@@ -46,9 +47,8 @@ const ModalImage = styled.img`
   max-height: 17.5rem;
   object-fit: cover;
   
-  @media(min-width: 64rem) {
+  @media(min-width: ${breakpoints.desktop}) {
     max-width: 17.5rem;
-
   }
 `
 
@@ -56,31 +56,18 @@ const ModalInfo = styled.div`
   width: 100%;
 `
 
-const ModalTitle = styled.h3`
-  color: #FFEBD9;
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 900;
-  line-height: normal;
-  
+const ModalTitle = styled(H4)`
+  color: ${colors.white};
 `
 
-const ModalDescription = styled.p`
-  color: #FFEBD9;
-  font-size: 0.8rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1.375rem;
+const ModalDescription = styled(P)`
+  color: ${colors.white};
   margin: 1rem 0;
 `
 
-const ModalPorcao = styled.span`
+const ModalPorcao = styled(P)`
+color: ${colors.white};
   display: block;
-  color: #FFEBD9;
-  font-size: 0.8rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1.375rem;
   height: 100%;
   max-height: 5.5rem;
   overflow: hidden;
@@ -90,7 +77,7 @@ const ModalPorcao = styled.span`
 const ModalButton = styled.button`
   background-color: #FFEBD9;
   border: none;
-  color: #E66767;
+  color: ${colors.indianRed};
   cursor: pointer;
   text-align: center;
   font-size: 0.8rem;
