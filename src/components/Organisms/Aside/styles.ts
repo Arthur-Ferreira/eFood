@@ -1,6 +1,7 @@
 import styled from "styled-components"
 
 import close from "../../../public/close.svg"
+import { breakpoints, colors } from "../../Global/vars"
 
 const AsideOverlay = styled.div`
   position: fixed;
@@ -13,7 +14,7 @@ const AsideOverlay = styled.div`
 `
 
 const AsideContainer = styled.aside`
-  background-color: #E66767;
+  background-color: ${colors.indianRed};
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -23,7 +24,7 @@ const AsideContainer = styled.aside`
   right: 0;
   z-index: 2;
   
-  @media(min-width: 48rem) {
+  @media(min-width: ${breakpoints.tablet}) {
     max-width: 22.5rem;
   }
 `
@@ -58,7 +59,7 @@ const AsideTotalHeader = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: #FFEBD9;
+  color: ${colors.antiqueWhite};
   text-align: center;
   font-size: 0.875rem;
   font-style: normal;
@@ -67,9 +68,9 @@ const AsideTotalHeader = styled.div`
 `
 
 const AsideTotalButton = styled.button`
-  background-color: #FFEBD9;
+  background-color: ${colors.antiqueWhite};
   border: none;
-  color: #E66767;
+  color: ${colors.indianRed};
   cursor: pointer;
   text-align: center;
   font-size: 0.875rem;
