@@ -5,7 +5,7 @@ import { AsideState, setAsideState } from "../../../features/aside/asideSlice"
 import { getTotalPrice, parseToBrl } from "../../../utils/fn"
 
 import AsideItem from "../AsideItem"
-import { H2 } from "../Hero/styles"
+import { H2, H4, P } from "../../Atoms"
 
 import {
   AsideList,
@@ -37,8 +37,8 @@ const Cart: React.FC = () => {
           </AsideList>
           <AsideTotal>
             <AsideTotalHeader>
-              <h3>Valor Total</h3>
-              <p>{parseToBrl(getTotalPrice(pratos))}</p>
+              <H4>Valor Total</H4>
+              <P variant="secondary">{parseToBrl(getTotalPrice(pratos))}</P>
             </AsideTotalHeader>
             <AsideTotalButton onClick={showDelivery}>
               Continuar com a entrega
