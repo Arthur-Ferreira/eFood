@@ -1,4 +1,13 @@
 import styled from "styled-components"
+import { Form } from "formik"
+
+
+const FormSection = styled(Form)`
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+`
 
 const FormLabel = styled.label`
   display: block;
@@ -92,6 +101,7 @@ const FormTotalButton = styled.button`
 `
 
 export {
+  FormSection,
   FormLabel,
   FormInput,
   FormCardInfo,

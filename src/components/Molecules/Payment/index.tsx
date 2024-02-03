@@ -1,15 +1,16 @@
 import type React from "react"
 import { useState } from "react"
-import { Formik, Form } from "formik"
+import { Formik } from "formik"
 
 import { useAppSelector } from "../../../app/hooks"
 import { paymentSchema } from "../../../utils/schemas"
 import { usePurchaseMutation } from "../../../utils/api"
 import { getTotalPrice, parseToBrl } from "../../../utils/fn"
 
-import { H2 } from "../Hero/styles"
+import { H4 } from "../../Atoms"
 
 import {
+  FormSection,
   FormLabel,
   FormInput,
   FormCardInfo,
@@ -69,7 +70,7 @@ const Payment: React.FC<PaymentProps> = ({
 
   return (
     <>
-      <H2>Pagamento - Valor a pagar {parseToBrl(getTotalPrice(pratos))}</H2>
+      <H4>Pagamento - Valor a pagar {parseToBrl(getTotalPrice(pratos))}</H4>
       <Formik
         initialValues={{
           cardName: "",
@@ -82,7 +83,7 @@ const Payment: React.FC<PaymentProps> = ({
         onSubmit={handleSubmit}
       >
         {({ values, handleChange, handleBlur }) => (
-          <Form>
+          <FormSection>
             <div>
               <FormLabel htmlFor="cardName">Nome no cartão</FormLabel>
               <FormInput
@@ -156,7 +157,7 @@ const Payment: React.FC<PaymentProps> = ({
                 Voltar para a edição de endereço
               </FormTotalButton>
             </FormTotalActions>
-          </Form>
+          </FormSection>
         )}
       </Formik>
     </>
