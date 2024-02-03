@@ -1,51 +1,29 @@
 # eFood
 
-Parte 1 - Utilizar como base o layout disponível no link [eFood](https://www.figma.com/file/JjduV2Tg713TzYUUsees8b/efood?type=design&node-id=0-1&mode=design&t=fWWekknoLsPfkJ5n-0);
+The eFood project is a React-based online food ordering platform that utilizes Styled Components for styling, React Router for seamless navigation and Redux ToolKit for state management. Divided into four parts, the project encompasses the following:
 
-1) Criar um novo projeto React;
-2) Utilizar como biblioteca o Styled Component para estilização;
-3) Utilizar como biblioteca o React Router para a navegação entre páginas;
-4) Criar um novo repositório para o projeto;
-5) Subir as alterações no repositório;
-6) Criar um projeto na Vercel;
-7) Enviar o link do projeto publicado através da plataforma.
+Foundation Setup: Creation of a new React project based on the provided layout, with styling using Styled Components and page navigation facilitated by React Router. The project is hosted on Vercel for accessibility.
 
+Modal Creation and API Integration: Implementation of a purchase modal triggered by user actions, with content dynamically populated via AJAX requests using the Restaurants API. Project updates are pushed to the repository and deployed for review.
 
-Parte 2 - A entrega deste exercício consiste em:
+Shopping Cart Development: Development of a shopping cart page integrated with Redux for state management. The cart calculates total purchase values dynamically based on selected products. Project changes are pushed to the repository and deployed on Vercel.
 
+Order Processing and Confirmation: Creation of an order delivery page with functionality to process orders. Upon completion, a confirmation screen displays order details fetched from the Checkout API's response. Project updates are pushed to the repository and deployed for evaluation.
 
-1) Criar a modal utilizada ao clicar em comprar o produto e preencher o conteúdo do site por AJAX utilizando essa API [Restaurantes](https://fake-api-tau.vercel.app/api/efood/restaurantes)
-2) Suba as alterações no repositório.
-3) Faça um novo deploy
-4) Envie o link do projeto na Vercel através da plataforma. 
+The eFood project aims to deliver a user-friendly online food ordering experience through a comprehensive development approach, from foundational setup to advanced feature implementation.
 
 
+## Layout and API links:
 
-Parte 3 - A entrega deste exercício consiste em:
+- Project Layout: [eFood](https://www.figma.com/file/JjduV2Tg713TzYUUsees8b/efood?type=design&node-id=0-1&mode=design&t=fWWekknoLsPfkJ5n-0);
 
+- Restaurants API: [Restaurantes](https://fake-api-tau.vercel.app/api/efood/restaurantes)
 
-2) Crie a página do carrinho e também faça a dinâmica do preenchimento do carrinho através do Redux;
-3) No carrinho o valor da compra deverá ser a soma do preço dos produtos;
-4) Suba as alterações no repositório.
-5) Faça um novo deploy na Vercel, na plataforma da EBAC nos envie o link do projeto publicado.
-
-
-Parte 4 - 
-1) Crie a página de entrega do pedido;
-2) Ao clicar em concluir, façar um POST para esta rota;
-3) Crie a tela de confirmação do pedido;
-4) Depois que a API responder, exiba a tela de confirmação do pedido preenchendo os dados com as informações que API responder;
-5) Atualize o repositório do projeto com as alterações;
-6) Faça um novo deploy na Vercel;
-7) Envie o link do projeto publicado.
+- Checkout API: [Checkout](https://fake-api-tau.vercel.app/api/efood/checkout)
 
 
 
-Link para a API [Checkout](https://fake-api-tau.vercel.app/api/efood/checkout)
-
-
-
-## vite-template-redux
+## Vite-template-redux
 
 Uses [Vite](https://vitejs.dev/), [Vitest](https://vitest.dev/), and [React Testing Library](https://github.com/testing-library/react-testing-library) to create a modern [React](https://react.dev/) app compatible with [Create React App](https://create-react-app.dev/)
 
