@@ -18,15 +18,12 @@ const RestaurantContainer = styled(Container)`
   }
 `
 
-const H2 = styled.h2`
-  color: #E66767;
-  text-align: center;
-  font-size: 1.125rem;
-  font-style: normal;
-  font-weight: 900;
-  line-height: normal;
+const Button = styled.button`
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 `
 
 
 
-export { RestaurantHeader, RestaurantContainer, H2 };
+export { RestaurantHeader, RestaurantContainer, Button };
