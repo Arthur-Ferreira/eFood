@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { P } from "../../Atoms/Typography/styles"
 
 const RestaurantCardContainer = styled.div`
   border-radius: 8px;
@@ -25,21 +26,8 @@ const RestaurantCardInfo = styled.div`
   justify-content: space-between;
   height: 49%;
 `
-
-const RestaurantCardTitle = styled.h3`
-  color: #FFEBD9;
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 900;
-  line-height: normal;
   
-`
-  
-const RestaurantCardDescription = styled.p`
-  color: #FFEBD9;
-  font-size: 0.8rem;
-  font-style: normal;
-  font-weight: 400;
+const RestaurantCardDescription = styled(P)`
   line-height: 1.375rem;
   height: 100%;
   max-height: 5.5rem;
@@ -66,7 +54,6 @@ export {
   RestaurantCardContainer,
   RestaurantCardImage,
   RestaurantCardInfo,
-  RestaurantCardTitle,
   RestaurantCardDescription,
   RestaurantCardButton,
 }

@@ -3,13 +3,13 @@ import type React from "react"
 import { useAppDispatch, useAppSelector } from "../../../app/hooks"
 import { open } from "../../../features/cart/cartSlice"
 
+import { H4 } from "../../Atoms"
 import Modal from "../../Organisms/Modal"
 
 import {
   RestaurantCardContainer,
   RestaurantCardImage,
   RestaurantCardInfo,
-  RestaurantCardTitle,
   RestaurantCardDescription,
   RestaurantCardButton,
 } from "./styles"
@@ -29,20 +29,18 @@ const RestaurantCard: React.FC<RestaurantCardProps> = ({ prato }) => {
   const dispatch = useAppDispatch()
   const isOpen = useAppSelector(state => state.cart.isOpen)
 
-  const { nome, descricao, foto } = prato
+  const { nome, descricao, foto, porcao, preco, id } = prato
 
   const handleOpenModal = () => {
-    const { nome, descricao, foto, porcao, preco, id } = prato;
-    dispatch(open({ nome, descricao, foto, porcao, preco, id }));
-  };
-  
+    dispatch(open({ nome, descricao, foto, porcao, preco, id }))
+  }
 
   return (
     <>
       <RestaurantCardContainer>
         <RestaurantCardImage src={foto} alt={nome} />
         <RestaurantCardInfo>
-          <RestaurantCardTitle>{nome}</RestaurantCardTitle>
+          <H4 variant="secondary">{nome}</H4>
           <RestaurantCardDescription>{descricao}</RestaurantCardDescription>
           <RestaurantCardButton onClick={handleOpenModal}>
             Mais detalhes
