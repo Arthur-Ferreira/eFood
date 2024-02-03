@@ -1,8 +1,10 @@
 import styled from "styled-components";
 
+import { colors } from "../../Global/vars";
+
 const StyledFooter = styled.footer`
   height: 18.625rem;
-  background-color: #FFEBD9;
+  background-color: ${colors.antiqueWhite};
   text-align: center;
 `
 
@@ -14,16 +16,5 @@ const SocialMedia = styled.ul`
   margin-top: 2rem;
 `
 
-const Small = styled.small`
-  color: #E66767;
-  text-align: center;
-  font-size: 0.625rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  width: 100%;
-  max-width: 30rem;
-`
 
-
-export { StyledFooter, SocialMedia, Small };
+export { StyledFooter, SocialMedia };

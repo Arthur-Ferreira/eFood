@@ -1,11 +1,13 @@
 import type React from "react"
 
+import { Small } from "../../Atoms"
+
 import logo from "../../../public/logo.svg"
 import instagram from "../../../public/social/instagram.svg"
 import facebook from "../../../public/social/facebook.svg"
 import twitter from "../../../public/social/twitter.svg"
 
-import { StyledFooter, SocialMedia, Small } from "./styles"
+import { StyledFooter, SocialMedia } from "./styles"
 import { Container, LogoImg } from "../styles"
 
 const Footer: React.FC = () => {
@@ -13,7 +15,7 @@ const Footer: React.FC = () => {
     <StyledFooter>
       <Container>
         <div>
-          <LogoImg src={logo} alt="efood logo" />
+          <LogoImg src={logo} alt="efood" />
           <SocialMedia>
             <li>
               <img src={instagram} alt="instagram" />
