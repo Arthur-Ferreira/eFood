@@ -1,8 +1,9 @@
 import styled from "styled-components";
+import { colors } from "../Global/vars";
 
 const MainContainer = styled.main`
   width: 100%;
-  background-color: #FFF8F2;
+  background-color: ${colors.seaShell};
 `
 
 const List = styled.ul`
