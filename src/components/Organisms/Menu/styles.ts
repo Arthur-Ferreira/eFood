@@ -7,14 +7,4 @@ const StyledHeader = styled.header`
   text-align: center;
 `
 
-const H1 = styled.h1`
-  color: #E66767;
-  text-align: center;
-  font-size: 2.25rem;
-  font-weight: 900;
-  line-height: normal;
-  width: 100%;
-  max-width: 33.688rem;
-`
-
-export { StyledHeader, H1 };
+export default StyledHeader;
