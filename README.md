@@ -15,11 +15,11 @@ The eFood project aims to deliver a user-friendly online food ordering experienc
 
 ## Layout and API links:
 
-- Project Layout: [eFood](https://www.figma.com/file/JjduV2Tg713TzYUUsees8b/efood?type=design&node-id=0-1&mode=design&t=fWWekknoLsPfkJ5n-0);
+- Project Layout: <a href="https://www.figma.com/file/JjduV2Tg713TzYUUsees8b/efood?type=design&node-id=0-1&mode=design&t=rYQDbb63ByBzXf3r-0" target="_blank">eFood</a>
 
-- Restaurants API: [Restaurantes](https://fake-api-tau.vercel.app/api/efood/restaurantes)
+- Restaurants API: <a href="https://fake-api-tau.vercel.app/api/efood/restaurantes" target="_blank">Restaurantes</a>
 
-- Checkout API: [Checkout](https://fake-api-tau.vercel.app/api/efood/checkout)
+- Checkout API: <a href="https://fake-api-tau.vercel.app/api/efood/checkout" target="_blank">Checkout</a>
 
 
 
