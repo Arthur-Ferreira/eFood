@@ -28,7 +28,7 @@ const Footer: React.FC = () => {
             </li>
           </SocialMedia>
         </div>
-        <Small>
+        <Small $variant="primary">
           A efood é uma plataforma para divulgação de estabelecimentos, a
           responsabilidade pela entrega, qualidade dos produtos é toda do
           estabelecimento contratado.
