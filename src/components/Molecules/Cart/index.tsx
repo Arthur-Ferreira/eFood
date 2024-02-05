@@ -38,7 +38,7 @@ const Cart: React.FC = () => {
           <AsideTotal>
             <AsideTotalHeader>
               <H4>Valor Total</H4>
-              <P variant="secondary">{parseToBrl(getTotalPrice(pratos))}</P>
+              <P>{parseToBrl(getTotalPrice(pratos))}</P>
             </AsideTotalHeader>
             <AsideTotalButton onClick={showDelivery}>
               Continuar com a entrega

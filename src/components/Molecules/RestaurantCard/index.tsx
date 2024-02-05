@@ -40,7 +40,7 @@ const RestaurantCard: React.FC<RestaurantCardProps> = ({ prato }) => {
       <RestaurantCardContainer>
         <RestaurantCardImage src={foto} alt={nome} />
         <RestaurantCardInfo>
-          <H4 variant="secondary">{nome}</H4>
+          <H4>{nome}</H4>
           <RestaurantCardDescription>{descricao}</RestaurantCardDescription>
           <RestaurantCardButton onClick={handleOpenModal}>
             Mais detalhes

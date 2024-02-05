@@ -65,8 +65,8 @@ const ModalDescription = styled(P)`
   margin: 1rem 0;
 `
 
-const ModalPorcao = styled(P)`
-color: ${colors.white};
+const ModalPorcao = styled.span`
+  color: ${colors.white};
   display: block;
   height: 100%;
   max-height: 5.5rem;

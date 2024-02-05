@@ -7,7 +7,7 @@ import { paymentSchema } from "../../../utils/schemas"
 import { usePurchaseMutation } from "../../../utils/api"
 import { getTotalPrice, parseToBrl } from "../../../utils/fn"
 
-import { H4 } from "../../Atoms"
+import { H4, Small } from "../../Atoms"
 
 import {
   FormSection,
@@ -82,7 +82,7 @@ const Payment: React.FC<PaymentProps> = ({
         validationSchema={paymentSchema}
         onSubmit={handleSubmit}
       >
-        {({ values, handleChange, handleBlur }) => (
+        {({ values, handleChange, handleBlur, touched, errors }) => (
           <FormSection>
             <div>
               <FormLabel htmlFor="cardName">Nome no cartão</FormLabel>
@@ -95,6 +95,9 @@ const Payment: React.FC<PaymentProps> = ({
                 onChange={handleChange}
                 onBlur={handleBlur}
               />
+              {touched.cardName && errors.cardName && (
+                <Small>{errors.cardName}</Small>
+              )}
             </div>
             <FormCardInfo>
               <div>
@@ -108,6 +111,9 @@ const Payment: React.FC<PaymentProps> = ({
                   onChange={handleChange}
                   onBlur={handleBlur}
                 />
+                {touched.cardNumber && errors.cardNumber && (
+                  <Small>{errors.cardNumber}</Small>
+                )}
               </div>
               <div>
                 <FormLabel htmlFor="cvv">CVV</FormLabel>
@@ -120,6 +126,7 @@ const Payment: React.FC<PaymentProps> = ({
                   onChange={handleChange}
                   onBlur={handleBlur}
                 />
+                {touched.cvv && errors.cvv && <Small>{errors.cvv}</Small>}
               </div>
             </FormCardInfo>
             <FormDate>
@@ -134,6 +141,9 @@ const Payment: React.FC<PaymentProps> = ({
                   onChange={handleChange}
                   onBlur={handleBlur}
                 />
+                {touched.cardMonth && errors.cardMonth && (
+                  <Small>{errors.cardMonth}</Small>
+                )}
               </div>
               <div>
                 <FormLabel htmlFor="cardYear">Ano de vencimento</FormLabel>
@@ -146,6 +156,9 @@ const Payment: React.FC<PaymentProps> = ({
                   onChange={handleChange}
                   onBlur={handleBlur}
                 />
+                {touched.cardYear && errors.cardYear && (
+                  <Small>{errors.cardYear}</Small>
+                )}
               </div>
             </FormDate>
 
