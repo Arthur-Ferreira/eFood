@@ -1,11 +1,11 @@
 import type React from "react"
-import { Formik, Form } from "formik"
+import { Formik } from "formik"
 
 import { useAppDispatch } from "../../../app/hooks"
 import { AsideState, setAsideState } from "../../../features/aside/asideSlice"
 import { deliverySchema } from "../../../utils/schemas"
 
-import { H4 } from "../../Atoms"
+import { H4, Small } from "../../Atoms"
 
 import {
   FormSection,
@@ -48,7 +48,7 @@ const Delivery: React.FC<DeliveryProps> = ({ nextStep, handleChange }) => {
         validationSchema={deliverySchema}
         onSubmit={handleSubmit}
       >
-        {({ values, handleChange, handleBlur }) => (
+        {({ values, handleChange, handleBlur, touched, errors }) => (
           <FormSection>
             <div>
               <FormLabel htmlFor="name">Quem irá receber</FormLabel>
@@ -61,6 +61,7 @@ const Delivery: React.FC<DeliveryProps> = ({ nextStep, handleChange }) => {
                 onChange={handleChange}
                 onBlur={handleBlur}
               />
+              {touched.name && errors.name && <Small>{errors.name}</Small>}
             </div>
             <div>
               <FormLabel htmlFor="address">Endereço</FormLabel>
@@ -73,6 +74,9 @@ const Delivery: React.FC<DeliveryProps> = ({ nextStep, handleChange }) => {
                 onChange={handleChange}
                 onBlur={handleBlur}
               />
+              {touched.address && errors.address && (
+                <Small>{errors.address}</Small>
+              )}
             </div>
             <div>
               <FormLabel htmlFor="city">Cidade</FormLabel>
@@ -85,6 +89,7 @@ const Delivery: React.FC<DeliveryProps> = ({ nextStep, handleChange }) => {
                 onChange={handleChange}
                 onBlur={handleBlur}
               />
+              {touched.city && errors.city && <Small>{errors.city}</Small>}
             </div>
             <FormAddress>
               <div>
@@ -98,6 +103,7 @@ const Delivery: React.FC<DeliveryProps> = ({ nextStep, handleChange }) => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                 />
+                {touched.code && errors.code && <Small>{errors.code}</Small>}
               </div>
               <div>
                 <FormLabel htmlFor="number">Número</FormLabel>
@@ -110,6 +116,9 @@ const Delivery: React.FC<DeliveryProps> = ({ nextStep, handleChange }) => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                 />
+                {touched.number && errors.number && (
+                  <Small>{errors.number}</Small>
+                )}
               </div>
             </FormAddress>
             <div>
@@ -122,6 +131,9 @@ const Delivery: React.FC<DeliveryProps> = ({ nextStep, handleChange }) => {
                 onChange={handleChange}
                 onBlur={handleBlur}
               />
+              {touched.complement && errors.complement && (
+                <Small>{errors.complement}</Small>
+              )}
             </div>
             <FormTotalActions>
               <FormTotalButton type="submit">
