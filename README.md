@@ -1,5 +1,16 @@
 # eFood
 
+![Design preview for the eFood platform](./src/.github/layout.png)
+
+## Table of contents
+- [eFood](#efood)
+  - [Table of contents](#table-of-contents)
+  - [Layout and API links:](#layout-and-api-links)
+  - [Vite-template-redux](#vite-template-redux)
+    - [Goals](#goals)
+    - [Scripts](#scripts)
+    - [Inspiration](#inspiration)
+
 The eFood project is a React-based online food ordering platform that utilizes Styled Components for styling, React Router for seamless navigation and Redux ToolKit for state management. Divided into four parts, the project encompasses the following:
 
 Foundation Setup: Creation of a new React project based on the provided layout, with styling using Styled Components and page navigation facilitated by React Router. The project is hosted on Vercel for accessibility.
@@ -15,12 +26,13 @@ The eFood project aims to deliver a user-friendly online food ordering experienc
 
 ## Layout and API links:
 
+- Online Project: <a href="https://efood-arthurferreira.vercel.app/" target="_blank">Vercel (Online)</a>
+  
 - Project Layout: <a href="https://www.figma.com/file/JjduV2Tg713TzYUUsees8b/efood?type=design&node-id=0-1&mode=design&t=rYQDbb63ByBzXf3r-0" target="_blank">eFood</a>
 
 - Restaurants API: <a href="https://fake-api-tau.vercel.app/api/efood/restaurantes" target="_blank">Restaurantes</a>
 
 - Checkout API: <a href="https://fake-api-tau.vercel.app/api/efood/checkout" target="_blank">Checkout</a>
-
 
 
 ## Vite-template-redux
