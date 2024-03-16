@@ -7,17 +7,19 @@ import Footer from "../../Organisms/Footer"
 import CardList from "./styles"
 import { MainContainer } from "../styles"
 import { useGetRestaurantsQuery } from "../../../utils/api"
+import Loader from "../../Atoms/Loader"
 
 const Home: React.FC = () => {
-  const { data: restaurants } = useGetRestaurantsQuery()
+  const { data: restaurants, isLoading } = useGetRestaurantsQuery()
 
   if (!restaurants) return null
 
-  return (
+    return (
     <>
       <Header />
       <MainContainer>
         <CardList>
+          {isLoading && <Loader />}
           {restaurants.map(restaurant => (
             <li key={restaurant.id}>
               <Card restaurant={restaurant} />
