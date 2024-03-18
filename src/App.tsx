@@ -5,11 +5,13 @@ import {
 } from "react-router-dom"
 
 import Home from "./components/Templates/Home"
-import RestaurantDetails from "./components/Templates/RestaurantDetails"
+import Detail from "./components/Templates/Detail"
+import Root from "./components/Templates/Root"
 
 const router = createBrowserRouter([
   {
     path: "/",
+    element: <Root />,
     children: [
       {
         index: true,
@@ -17,7 +19,7 @@ const router = createBrowserRouter([
       },
       {
         path: "restaurant/:id",
-        element: <RestaurantDetails />,
+        element: <Detail />,
       },
     ],
   },
